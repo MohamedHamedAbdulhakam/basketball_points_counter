@@ -57,7 +57,7 @@ class _PointsCounterState extends State<PointsCounter> {
                           TeamAPoints += 2;
                           setState(() {});
                         },
-                        child: Text('add 2 point')),
+                        child: Text('add  point')),
                     ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.orange),
@@ -100,7 +100,7 @@ class _PointsCounterState extends State<PointsCounter> {
                           TeamBPoints += 2;
                           setState(() {});
                         },
-                        child: Text('add 2 point')),
+                        child: Text('add  point')),
                     ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.orange),
