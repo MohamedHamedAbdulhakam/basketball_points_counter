@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "566949045089",
+    "project_id": "bmicalculator-7f726",
+    "storage_bucket": "bmicalculator-7f726.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566949045089:android:8025027c4f965c83d49b20",
+        "android_client_info": {
+          "package_name": "com.example.basketball_points_counter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsQ2H17JmjLDs2t-36P4rUtUzeI7NfbRk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
