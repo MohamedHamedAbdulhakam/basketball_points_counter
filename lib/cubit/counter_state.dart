@@ -2,6 +2,6 @@ import 'package:flutter/material.dart';
 
 class CounterState {}
 
-class CounterAState extends CounterState {}
+class CounterAIncreamentState extends CounterState {}
 
-class CounterBState extends CounterState {}
+class CounterBIncreamentState extends CounterState {}
