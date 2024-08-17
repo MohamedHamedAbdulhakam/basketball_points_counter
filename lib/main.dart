@@ -22,59 +22,68 @@ class PointsCounter extends StatelessWidget {
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
-  int teamAPoints = 0;
-  int teamBPoints = 0;
+  // int teamAPoints = 0;
+  // int teamBPoints = 0;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<CounterCubit, CounterState>(
       listener: (context, state) {
-        if (state is CounterAIncreamentState) {
-          teamAPoints = BlocProvider.of<CounterCubit>(context).teamAPoint;
-        } else {
-          teamBPoints = BlocProvider.of<CounterCubit>(context).teamBPoint;
-        }
+        // if (state is CounterAIncreamentState) {
+        //   teamAPoints = BlocProvider.of<CounterCubit>(context).teamAPoint;
+        // } else {
+        //   teamBPoints = BlocProvider.of<CounterCubit>(context).teamBPoint;
+        // }
         // TODO: implement listener
       },
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.orange,
-            title: Text("points counters"),
+            title: const Text("points counters"),
           ),
           body: Column(
             children: [
-              Spacer(),
+              const Spacer(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Column(
                     children: [
-                      Text(
+                      const Text(
                         "Team A",
                         style: TextStyle(fontSize: 30),
                       ),
                       Text(
-                        '$teamAPoints',
-                        style: TextStyle(fontSize: 140),
+                        '${BlocProvider.of<CounterCubit>(context).teamAPoint}',
+                        style: const TextStyle(fontSize: 140),
                       ),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.orange),
-                          onPressed: () {},
-                          child: Text('add 1 point')),
+                          onPressed: () {
+                            BlocProvider.of<CounterCubit>(context)
+                                .teamIncreament(team: 'A', buttonnumber: 1);
+                          },
+                          child: const Text('add 1 point')),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.orange),
-                          onPressed: () {},
-                          child: Text('add  point')),
+                          onPressed: () {
+                            BlocProvider.of<CounterCubit>(context)
+                                .teamIncreament(team: 'A', buttonnumber: 2);
+                          },
+                          child: const Text('add 2 point')),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.orange),
-                          onPressed: () {},
-                          child: Text('add 3 point'))
+                          onPressed: () {
+                            BlocProvider.of<CounterCubit>(context)
+                                .teamIncreament(team: 'A', buttonnumber: 3);
+                          },
+                          child: const Text('add 3 point'))
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 400,
                     child: VerticalDivider(
                       color: Color(0xff617d8a),
@@ -83,28 +92,37 @@ class HomePage extends StatelessWidget {
                   ),
                   Column(
                     children: [
-                      Text(
+                      const Text(
                         "Team B",
                         style: TextStyle(fontSize: 30),
                       ),
                       Text(
-                        '$teamBPoints',
-                        style: TextStyle(fontSize: 140),
+                        '${BlocProvider.of<CounterCubit>(context).teamBPoint}',
+                        style: const TextStyle(fontSize: 140),
                       ),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.orange),
-                          onPressed: () {},
-                          child: Text('add 1 point')),
+                          onPressed: () {
+                            BlocProvider.of<CounterCubit>(context)
+                                .teamIncreament(team: 'B', buttonnumber: 1);
+                          },
+                          child: const Text('add 1 point')),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.orange),
-                          onPressed: () {},
-                          child: Text('add  point')),
+                          onPressed: () {
+                            BlocProvider.of<CounterCubit>(context)
+                                .teamIncreament(team: 'B', buttonnumber: 2);
+                          },
+                          child: const Text('add 2 point')),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.orange),
-                          onPressed: () {},
+                          onPressed: () {
+                            BlocProvider.of<CounterCubit>(context)
+                                .teamIncreament(team: 'B', buttonnumber: 3);
+                          },
                           child: Text('add 3 point'))
                     ],
                   )
@@ -115,8 +133,8 @@ class HomePage extends StatelessWidget {
                   style:
                       ElevatedButton.styleFrom(backgroundColor: Colors.orange),
                   onPressed: () {},
-                  child: Text('reset')),
-              Spacer()
+                  child: const Text('reset')),
+              const Spacer()
             ],
           ),
         );
