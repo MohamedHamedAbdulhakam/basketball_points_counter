@@ -1,4 +1,5 @@
-import 'dart:math';
+
+import 'package:basketball_points_counter/constants.dart';
 import 'package:basketball_points_counter/cubit/counter_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -38,9 +39,10 @@ class HomePage extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.orange,
-            title: const Text("points counters"),
+            backgroundColor: Constants.kPrimaryColor,
+            title: Center(child:  Text("points counters",style: TextStyle(fontWeight: FontWeight.bold),)),
           ),
+        
           body: Column(
             children: [
               const Spacer(),
@@ -59,7 +61,7 @@ class HomePage extends StatelessWidget {
                       ),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.orange),
+                              backgroundColor: Constants.kPrimaryColor),
                           onPressed: () {
                             BlocProvider.of<CounterCubit>(context)
                                 .teamIncreament(team: 'A', buttonnumber: 1);
@@ -67,7 +69,7 @@ class HomePage extends StatelessWidget {
                           child: const Text('add 1 point')),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.orange),
+                              backgroundColor: Constants.kPrimaryColor),
                           onPressed: () {
                             BlocProvider.of<CounterCubit>(context)
                                 .teamIncreament(team: 'A', buttonnumber: 2);
@@ -75,7 +77,7 @@ class HomePage extends StatelessWidget {
                           child: const Text('add 2 point')),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.orange),
+                              backgroundColor: Constants.kPrimaryColor),
                           onPressed: () {
                             BlocProvider.of<CounterCubit>(context)
                                 .teamIncreament(team: 'A', buttonnumber: 3);
@@ -102,7 +104,7 @@ class HomePage extends StatelessWidget {
                       ),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.orange),
+                              backgroundColor: Constants.kPrimaryColor),
                           onPressed: () {
                             BlocProvider.of<CounterCubit>(context)
                                 .teamIncreament(team: 'B', buttonnumber: 1);
@@ -110,7 +112,7 @@ class HomePage extends StatelessWidget {
                           child: const Text('add 1 point')),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.orange),
+                              backgroundColor: Constants.kPrimaryColor),
                           onPressed: () {
                             BlocProvider.of<CounterCubit>(context)
                                 .teamIncreament(team: 'B', buttonnumber: 2);
@@ -118,7 +120,7 @@ class HomePage extends StatelessWidget {
                           child: const Text('add 2 point')),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.orange),
+                              backgroundColor: Constants.kPrimaryColor),
                           onPressed: () {
                             BlocProvider.of<CounterCubit>(context)
                                 .teamIncreament(team: 'B', buttonnumber: 3);
@@ -131,9 +133,11 @@ class HomePage extends StatelessWidget {
               Spacer(),
               ElevatedButton(
                   style:
-                      ElevatedButton.styleFrom(backgroundColor: Colors.orange),
-                  onPressed: () {},
-                  child: const Text('reset')),
+                      ElevatedButton.styleFrom(backgroundColor: Constants.kPrimaryColor),
+                  onPressed: () {
+                    
+                  },
+                  child: const Text('reset',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)),
               const Spacer()
             ],
           ),
