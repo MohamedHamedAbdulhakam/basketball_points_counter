@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
+
 
 class Constants {
   static Color kPrimaryColor = Color(0xff008080); // Corrected to use Color constructor.
