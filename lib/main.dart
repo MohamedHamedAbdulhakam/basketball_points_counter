@@ -1,4 +1,3 @@
-
 import 'package:basketball_points_counter/constants.dart';
 import 'package:basketball_points_counter/cubit/counter_state.dart';
 import 'package:basketball_points_counter/team_a_section.dart';
@@ -30,28 +29,78 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<CounterCubit, CounterState>(
-      listener: (context, state) {
-        // if (state is CounterAIncreamentState) {
-        //   teamAPoints = BlocProvider.of<CounterCubit>(context).teamAPoint;
-        // } else {
-        //   teamBPoints = BlocProvider.of<CounterCubit>(context).teamBPoint;
-        // }
-        // TODO: implement listener
-      },
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
             backgroundColor: Constants.kPrimaryColor,
-            title:const  Center(child:  Text("points counters",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),)),
+            title: const Center(
+                child: Text(
+              "points counters",
+              style:
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            )),
           ),
-        
           body: Column(
             children: [
               const Spacer(),
-            const   Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                 TeamAsection(),
+                  Column(
+                    children: [
+                      Text(
+                        "Team A",
+                        style: TextStyle(
+                            color: Constants.kPrimaryColor,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        '${BlocProvider.of<CounterCubit>(context).teamAPoint}',
+                        style: TextStyle(
+                            fontSize: 140, color: Constants.kPrimaryColor),
+                      ),
+                      ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Constants.kPrimaryColor),
+                          onPressed: () {
+                            BlocProvider.of<CounterCubit>(context)
+                                .teamIncreament(team: 'A', buttonnumber: 1);
+                          },
+                          child: const Text(
+                            'add 1 point',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          )),
+                      ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Constants.kPrimaryColor),
+                          onPressed: () {
+                            BlocProvider.of<CounterCubit>(context)
+                                .teamIncreament(team: 'A', buttonnumber: 2);
+                          },
+                          child: const Text(
+                            'add 2 point',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          )),
+                      ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Constants.kPrimaryColor),
+                          onPressed: () {
+                            BlocProvider.of<CounterCubit>(context)
+                                .teamIncreament(team: 'A', buttonnumber: 3);
+                          },
+                          child: const Text(
+                            'add 3 point',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ))
+                    ],
+                  ),
                   SizedBox(
                     height: 400,
                     child: VerticalDivider(
@@ -59,23 +108,84 @@ class HomePage extends StatelessWidget {
                       thickness: 1,
                     ),
                   ),
-                  TeamBsection()
+                  Column(
+                    children: [
+                      Text(
+                        "Team B",
+                        style: TextStyle(
+                            color: Constants.kPrimaryColor,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        '${BlocProvider.of<CounterCubit>(context).teamBPoint}',
+                        style: TextStyle(
+                            fontSize: 140, color: Constants.kPrimaryColor),
+                      ),
+                      ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Constants.kPrimaryColor),
+                          onPressed: () {
+                            BlocProvider.of<CounterCubit>(context)
+                                .teamIncreament(team: 'B', buttonnumber: 1);
+                          },
+                          child: const Text(
+                            'add 1 point',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          )),
+                      ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Constants.kPrimaryColor),
+                          onPressed: () {
+                            BlocProvider.of<CounterCubit>(context)
+                                .teamIncreament(team: 'B', buttonnumber: 2);
+                          },
+                          child: const Text(
+                            'add 2 point',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          )),
+                      ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Constants.kPrimaryColor),
+                          onPressed: () {
+                            BlocProvider.of<CounterCubit>(context)
+                                .teamIncreament(team: 'B', buttonnumber: 3);
+                          },
+                          child: const Text(
+                            'add 3 point',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ))
+                    ],
+                  )
                 ],
               ),
-             const  Spacer(),
+              const Spacer(),
               ElevatedButton(
-                  style:
-                      ElevatedButton.styleFrom(backgroundColor: Constants.kPrimaryColor),
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Constants.kPrimaryColor),
                   onPressed: () {
-                    
+                    BlocProvider.of<CounterCubit>(context)
+                        .teamIncreament(team: "reset", buttonnumber: 1);
                   },
-                  child: const Text('reset',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20),)),
+                  child: const Text(
+                    'reset',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
+                  )),
               const Spacer()
             ],
           ),
         );
       },
+      listener: (context, state) {},
     );
   }
 }
-
