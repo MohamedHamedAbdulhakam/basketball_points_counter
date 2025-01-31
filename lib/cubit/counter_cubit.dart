@@ -22,5 +22,7 @@ class CounterCubit extends Cubit<CounterState> {
         teamAPoint = 0;
    teamBPoint = 0;
     }
+      emit(CounterAIncreamentState());
+      emit(CounterBIncreamentState());
   }
 }
